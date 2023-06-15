@@ -12,7 +12,7 @@ class Client < ActiveRecord::Base
 end
 
 class Barber < ActiveRecord::Base
- end
+end
 
 before do
 	@barbers = Barber.all
@@ -31,14 +31,14 @@ end
 
 post '/visit' do
 	@username =	params[:username]
-	@email =	params[:email]
+	# @email =	params[:email]
 	@phone =	params[:phone]
 	@date =		params[:date]
-	@time =		params[:time]
 	@barber =	params[:barber]
 	@color =	params[:color]
 
-	
+
+	Client.create :name => "#{@username}", :phone => "#{@phone}", :datestamp => "#{@date}", :barber => "#{@barber}", :color => "#{@color}"
 	erb "Thanks, #{@username}. Barber #{@barber} will be waiting for you on #{@date}. "
 
 end

@@ -24,7 +24,7 @@ $(function() {
     <br>
 
     <label>Date</label>
-    <input name="date" type="text" id="datetimepicker" class="form-control" value="<%= @date %>" >
+    <input name="date" type="text" id="datetimepicker" class="form-control" >
     <br>
 
     <!-- <label>Time</label>
@@ -33,9 +33,6 @@ $(function() {
 
     <label>Barber</label>
     <select class="form-control" name="barber" id="exampleFormControlSelect1" value="<%= @barber %>" >
-     <!--  <option <%= @barber == 'Walter' ? 'selected' : '' %>>Walter</option>
-      <option <%= @barber == 'Jessie' ? 'selected' : '' %>>Jessie</option>
-      <option <%= @barber == 'Gus' ? 'selected' : '' %>>Gus</option> -->
 
       <% @barbers.each do |item| %>
         <option <%= @barber == item['name'] ? 'selected' : '' %>><%= item['name'] %></option>
