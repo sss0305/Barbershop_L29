@@ -46,3 +46,7 @@ post '/visit' do
 	erb "Thanks, #{@username}. Barber #{@barber} will be waiting for you on #{@date}. "
 
 end
+
+get '/contacts' do
+	erb :contacts
+end
