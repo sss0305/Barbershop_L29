@@ -50,3 +50,18 @@ end
 get '/contacts' do
 	erb :contacts
 end
+
+post '/contacts' do
+	@username = params[:username]
+	@email = params[:email]
+	@text = params[:text]
+
+	Contact.create :username => "#{@username}", :email => "#{@email}", :text => "#{@text}"
+	erb  "Thanks, #{@username}!"
+end
+
+
+
+
+
+
